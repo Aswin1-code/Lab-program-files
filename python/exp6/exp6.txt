@@ -1,0 +1,103 @@
+Script started on Wed Feb  4 16:18:02 2026
+[?1034h[23bee030@mepcolinux exp6]$cat ex1.py
+l=[int(i) for i in list(input("Enter a list of values: ").split())]
+print(l)
+print(tuple(l))
+
+[23bee030@mepcolinux exp6]$python3 ex1.py
+Enter a list of values: 1 2 3 4 5 6 7 8
+[1, 2, 3, 4, 5, 6, 7, 8]
+(1, 2, 3, 4, 5, 6, 7, 8)
+[23bee030@mepcolinux exp6]$python3 ex1.py[4Pcat ex1.py1[1P[1@2
+d1=int(input("Enter a integer: "))
+d2=float(input("Enter a float value: "))
+d3=str(input("Enter a string: "))
+t=(d1,d2,d3)
+print(f"{t} is the tuple with length: {len(t)}")
+
+[23bee030@mepcolinux exp6]$cat ex2.py[4@python3 ex1.py[1P[1@2
+Enter a integer: 11
+Enter a float value: 1.1
+Enter a string: car   bm  BMW
+(11, 1.1, 'BMW') is the tuple with length: 3
+[23bee030@mepcolinux exp6]$python3 ex2.py[4Pcat ex2.py[1P[1@3
+g=[int(i) for i in list(input("Enter values: ").split())]
+Tup=tuple(g)
+ch=int(input("Enter a value to check in tuple(int) :"))
+if Tup.count(ch)==0:
+    print(f"{ch} is not present in tuple")
+else:
+    print(f"{ch} is present in tuple for {Tup.count(ch)} times")
+
+[23bee030@mepcolinux exp6]$cat ex3.py[4@python3 ex2.py[1P[1@3
+Enter values: 1 2 1 3 4
+Enter a value to check in tuple(int) :1
+1 is present in tuple for 2 times
+[23bee030@mepcolinux exp6]$python3 ex3.py[4Pcat ex3.py[1P[1@4
+g=[int(i) for i in list(input("Enter values: ").split())]
+Tup=tuple(g)
+print(Tup)
+l=list(Tup)
+t=[]
+for i in l:
+    if i not in t:
+        t.append(i)
+print(tuple(t))
+[23bee030@mepcolinux exp6]$cat ex4.py[4@python3 ex3.py[1P[1@4
+Enter values: 1 2 1 2 3 4
+(1, 2, 1, 2, 3, 4)
+(1, 2, 3, 4)
+[23bee030@mepcolinux exp6]$python3 ex4.py[4Pcat ex4.py[1P[1@5
+import itertools
+inp=eval(input("Enter nested tuple values: "))
+f=tuple(itertools.chain(*inp))
+print(f)
+[23bee030@mepcolinux exp6]$cat ex5.py[4@python3 ex4.py[1P[1@5
+Enter nested tuple values: ((1,2),(3,4))
+(1, 2, 3, 4)
+[23bee030@mepcolinux exp6]$python3 ex5.py[4Pcat ex5.py[1P[1@6
+t1,t2=tuple(input("Enter tuple1: ").split()),tuple(input("Enter tuple2: ").split())
+print(f"{t1+t2} is a merged tuple")
+
+[23bee030@mepcolinux exp6]$cat ex6.py[4@python3 ex5.py[1P[1@6
+Enter tuple1: 1 2 3
+Enter tuple2: 4 5 6
+('1', '2', '3', '4', '5', '6') is a merged tuple
+[23bee030@mepcolinux exp6]$python3 ex6.py[4Pcat ex6.py[1P[1@7
+t=tuple(input("Enter tuple1 values: ").split())
+s,e=int(input("Start: ")),int(input("End: "))
+n_t=t[s-1:e]
+print(n_t)
+print(t[e:len(t)+1])
+[23bee030@mepcolinux exp6]$cat ex7.py[4@python3 ex6.py[1P[1@7
+Enter tuple1 values: 1 2 3 4 5 6 7 8 9 0
+Start: 1 5  
+End: 5
+('1', '2', '3', '4', '5')
+('6', '7', '8', '9', '0')
+[23bee030@mepcolinux exp6]$python3 ex7.py[4Pcat ex7.py[1P[1@8
+l=[]
+print("Enter list of values , press z to end: ")
+while True:
+    inp=input()
+    if inp=='z':
+        break
+    l.append(inp)
+print(tuple(l))
+[23bee030@mepcolinux exp6]$cat ex8.py[4@python3 ex7.py[1P[1@8
+Enter list of values , press z to end: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+z
+('1', '2', '3', '4', '5', '6', '7', '8', '9', '0')
+[23bee030@mepcolinux exp6]$exit
+
+Script done on Wed Feb  4 16:20:27 2026

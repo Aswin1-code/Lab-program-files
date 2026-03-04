@@ -1,0 +1,117 @@
+Script started on Fri 18 Jul 2025 03:26:36 PM IST
+[?1034h[23bee030@mepcolinux c++]$cat setB1.cpp
+#include<iostream>
+#include<string>
+using namespace std;
+class car{
+   string brand, model;
+   int year,price;
+   public:
+      car(string a,string b,int c, int d){
+	 brand=a,model=b,year=c,price=d;
+      	 cout<<" 	Welcome to the Aswin's Garage "<<endl;
+      }
+      void info(){
+	 cout<<"Brand :"<<brand<<endl;
+	 cout<<"Model :"<<model<<endl;
+	 cout<<"Year :"<<year<<endl;
+	 cout<<"Price :"<<price<<endl;
+      }
+      ~car(){
+	 cout<<"	Thank You for adding a new car "<<endl;
+      }
+};
+int main(){
+   string brd,mod;
+   int yr,pr;
+   cout<<"\nEnter the Brand: ";
+   getline(cin,brd);
+   cout<<"\nEnter the Model: ";
+   cin>>mod;
+   cout<<"\nEnter Year: ";
+   cin>>yr;
+   cout<<"\nEnter the Price: ";
+   cin>>pr;
+   car c1(brd,mod,pr,yr);
+   c1.info();
+   return 0;
+}
+
+[23bee030@mepcolinux c++]$g++ setB1.cpp
+[23bee030@mepcolinux c++]$./a.out
+
+Enter the Brand: Lamborghini
+
+Enter the Model: Huran can
+
+Enter Year: 2022
+
+Enter the Price: 140000
+ 	Welcome to the Aswin's Garage 
+Brand :Lamborghini
+Model :Huracan
+Year :140000
+Price :2022
+	Thank You for adding a new car 
+[23bee030@mepcolinux c++]$cat setB2.cpp
+#include<iostream>
+#include<string>
+using namespace std;
+class colib{
+   string title;
+   int accNo,price,noCop;
+   public:
+      colib(){
+	 title="null";
+	 accNo=0;
+	 price=0;
+	 noCop=0;
+      }
+      void getData(){
+	 cout<<"Enter book name: "<<endl;
+	 cin>>title;
+	 cout<<"Enter access number, price and no.of copies separated by spaces: "<<endl;
+	 cin>>accNo>>price>>noCop;
+      }
+      int getPrice(){ return price;}
+      int getCopies(){ return noCop;}
+      int getWorth(){ return (price * noCop);}
+  ~colib(){}
+};
+int main(){
+   colib b1,b2;
+   b1.getData();
+   b2.getData();
+   cout<<"\n\tWelcome to the Library Management "<<endl;
+   cout<<"\nPrice of book1: "<<b1.getPrice()<<"\nCopies count: "<<b1.getCopies()<<endl;
+   cout<<"Total worth: "<<b1.getWorth()<<endl;
+   cout<<"\nPrice of book2: "<<b2.getPrice()<<"\nCopies count: "<<b2.getCopies()<<endl;
+   cout<<"Total Worth: "<<b2.getWorth()<<endl;
+   cout<<"\nTotal worth of books in library: "<<(b1.getWorth() + b2.getWorth())<<endl;
+   return 0;
+}
+[23bee030@mepcolinux c++]$g++ setB2.cpp
+[23bee030@mepcolinux c++]$./a.out
+Enter book name: 
+Aswin     Atomic
+Enter access number, price and no.of copies separated by spaces: 
+120 50 5
+Enter book name: 
+Habut  its
+Enter access number, price and no.of copies separated by spaces: 
+140 25 4
+
+	Welcome to the Library Management 
+
+Price of book1: 50
+Copies count: 5
+Total worth: 250
+
+Price of book2: 25
+Copies count: 4
+Total Worth: 100
+
+Total worth of books in library: 350
+[23bee030@mepcolinux c++]$exit
+
+Script done on Fri 18 Jul 2025 03:29:15 PM IST

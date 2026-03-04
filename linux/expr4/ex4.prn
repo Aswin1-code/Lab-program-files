@@ -1,0 +1,106 @@
+Script started on Friday 05 April 2024 03:17:15 PM IST
+[?1034h[23bee030@mepcolinux test]$cat fact.sh
+#!/bin/bash
+echo "Enter a number"
+read number
+num=$number
+fact=1
+while [ $num -ge 1 ]
+do
+   fact=$((fact * num))
+   num=$((num - 1))
+done
+echo "factorial of $number is $fact"
+[23bee030@mepcolinux test]$sh fact.sh
+Enter a number
+5
+factorial of 5 is 120
+[23bee030@mepcolinux test]$cat fibo.sh
+#!/bin/bash
+echo "How many numbers do you want of Fibonacci series ?"
+read total
+x=0
+y=1
+i=2
+echo "Fibonacci Series up to $total terms :: "
+echo "$x"
+echo "$y"
+while [ $i -lt $total ]
+do
+   i=`expr $i + 1 `
+   z=`expr $x + $y `
+   echo "$z"
+   x=$y
+   y=$z
+done
+[23bee030@mepcolinux test]$sh fibo.sh
+How many numbers do you want of Fibonacci series ?
+5
+Fibonacci Series up to 5 terms :: 
+0
+1
+1
+2
+3
+[23bee030@mepcolinux test]$cat leap.sh
+echo "Enter the year"
+read y
+b=`expr $y % 4`
+if [ $b -eq 0 ]
+then
+echo "$y is a leap year"
+else
+echo "$y is not a leap year" 
+fi
+[23bee030@mepcolinux test]$sh leap.sh
+Enter the year
+2024
+2024 is a leap year
+[23bee030@mepcolinux test]$sh leap.sh
+Enter the year
+2023
+2023 is not a leap year
+[23bee030@mepcolinux test]$cat cw.sh
+#!/bin/bash
+
+echo "Enter the radius of the circle"
+read r
+area=$(echo "3.14*$r*$r" | bc  )
+circum=$(echo "3.14*2*$r" | bc)
+echo "area of the circle is             " $area
+echo "circumference of the circle is    " $circum
+[23bee030@mepcolinux test]$sh cw.sh
+Enter the radius of the circle
+3
+area of the circle is              28.26
+circumference of the circle is     18.84
+[23bee030@mepcolinux test]$cat sum.sh
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+     read num           #get number
+       sum=$((sum + num)) #sum+=num
+         i=$((i + 1))
+      done
+
+      echo $sum
+[23bee030@mepcolinux test]$sh sum.sh
+Enter Size(N)
+5
+Enter Numbers
+67  10  9 10
+9
+8
+7
+6
+40
+[23bee030@mepcolinux test]$exit
+exit
+
+Script done on Friday 05 April 2024 03:19:10 PM IST

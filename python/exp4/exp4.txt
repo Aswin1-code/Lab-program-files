@@ -1,0 +1,102 @@
+Script started on Wed Jan 21 15:56:51 2026
+[?1034h[23bee030@mepcolinux exp4]$cat ex1.py
+def big(a,b,c):
+    if a>=b and a>=c:
+        return a
+    elif b>=a and b>=c:
+        return b
+    else:
+        return c
+n1,n2,n3=float(input("Enter num1: ")),float(input("Enter num2: ")),float(input("Enter num3: "))
+print(f"{big(n1,n2,n3)} is largest of {n1},{n2},{n3}")
+[23bee030@mepcolinux exp4]$cat ex1.pywho | grep "23bee"[8Pcat ex1.py[1P[1P[1P[1P[1@p[1@y[1@t[1@h[1@o[1@n[1@3[1@ 
+Enter num1: 3
+Enter num2: 4
+Enter num3: 5
+5.0 is largest of 3.0,4.0,5.0
+[23bee030@mepcolinux exp4]$python3 ex1.py[4Pcat ex1.py[1P[1@2
+def fact(n):
+    if n<=1:
+        return 1
+    return n*fact(n-1)
+f1=int(input("Enter non negative num: "))
+print(f"{fact(f1)} is the factorial of {f1}")
+
+
+
+[23bee030@mepcolinux exp4]$cat ex2.py[4@python3 ex1.py[1P[1@2
+Enter non negative num: 5
+120 is the factorial of 5
+[23bee030@mepcolinux exp4]$python3 ex2.py[4Pcat ex2.py[1P[1@3
+def swap(a,b):
+    a=a+b
+    b=a-b
+    a=a-b
+    print(f"a:{a}, b:{b} ::-> after swapping ")
+a,b=float(input("Enter num1: ")),float(input("Enter num2: "))
+print(f"a:{a}, b:{b} ::-> before swapping ")
+swap(a,b)
+[23bee030@mepcolinux exp4]$cat ex3.py[4@python3 ex2.py[1P[1@3
+Enter num1: 4
+Enter num2: 5
+a:4.0, b:5.0 ::-> before swapping 
+a:5.0, b:4.0 ::-> after swapping 
+[23bee030@mepcolinux exp4]$python3 ex3.py[4Pcat ex3.py[1P[1@4
+import math
+def power(x,y):
+    return x**y
+a,b=float(input("Enter base: ")),float(input("Enter power: "))
+print(f"{power(a,b)} is the power solution")
+[23bee030@mepcolinux exp4]$cat ex4.py[4@python3 ex3.py[1P[1@4
+Enter base: 4
+Enter power: 3
+64.0 is the power solution
+[23bee030@mepcolinux exp4]$python3 ex4.py[4Pcat ex4.py[1P[1@5
+import math 
+def prime(n):
+    flag=1
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0:
+            flag=0
+            break
+    return flag
+a=int(input("Enter num: "))
+if prime(a)==1:
+    print(f"{a} is a prime number")
+else:
+    print(f"{a} is not a prime number")
+[23bee030@mepcolinux exp4]$cat ex5.py[4@python3 ex4.py[1P[1@5
+Enter num: 67
+67 is a prime number
+[23bee030@mepcolinux exp4]$python3 ex5.py
+Enter num: 55
+55 is not a prime number
+[23bee030@mepcolinux exp4]$python3 ex5.py[4Pcat ex5.py[1P[1@6
+import math
+def factors(n):
+    f=[]
+    l=[]
+    flag=1
+    for i in range(1,n+1):
+        if n%i==0:
+            f.append(i)
+    for i in f[1:]:
+        for j in range(2,int(math.sqrt(i))+1):
+            if i%j==0:
+               flag=0
+               break
+        if flag==1:
+            l.append(i)
+        
+    return l
+num=int(input("Enter num: "))
+print(f"{factors(num)} are the prime factors of {num}")
+[23bee030@mepcolinux exp4]$cat ex6.py[4@python3 ex5.py[1P[1@6
+Enter num: 10
+[2, 5] are the prime factors of 10
+[23bee030@mepcolinux exp4]$python3 ex6.py
+Enter num: 45
+[3, 5] are the prime factors of 45
+[23bee030@mepcolinux exp4]$python3 ex6.py[Kexit
+
+Script done on Wed Jan 21 15:59:15 2026

@@ -1,0 +1,47 @@
+Script started on Friday 08 March 2024 04:00:59 PM IST
+[?1034h[23bee030@mepcolinux test]$cat dates.sh
+echo $ date
+echo "Hello $USER"
+echo hostname $HOSTNAME
+echo working in $(pwd)
+echo here is the month calendar
+echo "$(cal)"
+[23bee030@mepcolinux test]$sh dates.sh
+$ date
+Hello 23bee030
+hostname mepcolinux.mepcoeng.ac.in
+working in /run/media/root/Data/student/eee/ug/be2023/a/23bee030/test
+here is the month calendar
+     March 2024     
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+[23bee030@mepcolinux test]$cat s[Kusers.sh
+echo $(who -m)
+
+[23bee030@mepcolinux test]$cat dates.txt users.txt>>merged.txt
+[23bee030@mepcolinux test]$cat merged.txt
+$ date
+Hello 23bee030
+hostname mepcolinux.mepcoeng.ac.in
+working in /run/media/root/Data/student/eee/ug/be2023/a/23bee030/test
+here is the month calendar
+     March 2024     
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+23bee030 pts/201 2024-03-08 15:45 (172.16.30.2)
+[23bee030@mepcolinux test]$rm dates.txt
+[23bee030@mepcolinux test]$rm users.txt'[K
+[23bee030@mepcolinux test]$exit
+exit
+
+Script done on Friday 08 March 2024 04:02:29 PM IST

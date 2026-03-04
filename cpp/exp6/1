@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Time{
+    int hr,min,sec;
+    public:
+    Time(int a,int b, int c):hr(a),min(b),sec(c){}
+    //Time():hr(0),m(0),s(0){}
+        void operator++(){
+        sec++;
+        if (sec >= 60) { sec -= 60; min++; }
+        if (min >= 60) { min -= 60; hr++;}
+        display(hr,min,sec,"++pre");
+        }
+        void operator--(){
+        sec--;
+        if (sec <=0) { sec += 59; min--; }
+        if (min <=0) { min += 59; hr--; }
+        display(hr,min,sec,"--pre");
+        }
+        void operator++(int){
+        int hr1=hr,min1=min,sec1=sec;
+        sec++;
+        if (sec >= 60) { sec -= 60; min++; }
+        if (min >= 60) { min -= 60; hr++; }
+        display(hr1,min1,sec1,"post++");
+        }
+        void operator--(int){
+        int hr1=hr,min1=min,sec1=sec;
+        sec--;
+        if (sec < 0) { sec += 59; min--; }
+        if (min < 0) { min += 59; hr--; }
+        display(hr1,min1,sec1,"post--");
+        }
+   //void display(string a,string b){ cout<<b<<":: "<<hr<<":"<<min<<":"<<sec<<endl;}
+   void display(int hr,int min,int sec, string a){
+   cout<<a<<"::"<<hr<<":"<<min<<":"<<sec<<endl;
+    }
+};
+int main(){
+    int hrs=0,min=0,sec=0;
+    cout<<"Enter time in hr,mins,secs(separated by spaces): "<<endl;
+    cin>>hrs>>min>>sec;
+    Time t(hrs,min,sec);
+  /*  cout<<"+PreIncre: "<<++t1<<endl;
+    cout<<"PostIncre+: "<<t1++<<endl;
+    cout<<"-PreDecre: "<<--t1<<endl;
+    cout<<"PostDecre-: "<<t1--<<endl;
+    */
+   t++;
+   ++t;
+   t--;
+   --t;
+   //t.display();
+}

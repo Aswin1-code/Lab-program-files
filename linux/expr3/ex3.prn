@@ -1,0 +1,68 @@
+Script started on Friday 15 March 2024 03:33:37 PM IST
+[?1034h[23bee030@mepcolinux test]$cat marklist.txt
+100
+98
+75
+55
+67
+96
+88
+85
+
+[23bee030@mepcolinux test]$cat namelist.txt
+Arun
+Bala
+Cat
+Duriyan
+Nimalan
+Ramanujar
+Sita
+Kabilan
+[23bee030@mepcolinux test]$cat studrep.txt
+Ramanujar
+[23bee030@mepcolinux test]$paste marklist.txt namelist.txt>markdetail1.txt
+[23bee030@mepcolinux test]$cat markdetail1.txt
+100	Arun
+98	Bala
+75	Cat
+55	Duriyan
+67	Nimalan
+96	Ramanujar
+88	Sita
+85	Kabilan
+	
+[23bee030@mepcolinux test]$head -5 markdetail1.txt>>mark1.txt
+[23bee030@mepcolinux test]$cat mark1.txty[K
+100	Arun
+98	Bala
+75	Cat
+55	Duriyan
+67	Nimalan
+[23bee030@mepcolinux test]$tail -n 3 marl[Kk1.txt
+75	Cat
+55	Duriyan
+67	Nimalan
+[23bee030@mepcolinux test]$tail -n 3 mark1.txt>>mark2.txt
+[23bee030@mepcolinux test]$cat markdetail.txt
+cat: markdetail.txt: No such file or directory
+[23bee030@mepcolinux test]$cat markdea[Ktail1.txt
+100	Arun
+98	Bala
+75	Cat
+55	Duriyan
+67	Nimalan
+96	Ramanujar
+88	Sita
+85	Kabilan
+	
+[23bee030@mepcolinux test]$sed -n '4,8p,[K' markdetail.[K1.txt>>mark3.txt
+[23bee030@mepcolinux test]$cat -n mark3.txt
+     1	55	Duriyan
+     2	67	Nimalan
+     3	96	Ramanujar
+     4	88	Sita
+     5	85	Kabilan
+[23bee030@mepcolinux test]$exit
+exit
+
+Script done on Friday 15 March 2024 03:37:38 PM IST

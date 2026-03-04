@@ -1,0 +1,69 @@
+Script started on Tue 09 Sep 2025 07:16:05 AM IST
+[?1034h[23bee030@mepcolinux exp9]$cat ex1.cpp
+#include<iostream>
+using namespace std;
+template<class T>
+void Max(T v1,T v2){
+   if(v1>v2){ cout<<v1<<" is the largest"<<endl;}
+   else{ cout<<v2<<" is the largest"<<endl;}
+}
+int main(){
+   Max(5,32);
+   Max(2.5,1.75);
+   Max('c','a');
+   return 0;
+}
+[23bee030@mepcolinux exp9]$cat ex1.cpp[1Pex1.cpp[1Pex1.cpp[1Pex1.cpp+ex1.cpp+ex1.cpp ex1.cpp
+[23bee030@mepcolinux exp9]$./a.out
+32 is the largest
+2.5 is the largest
+c is the largest
+[23bee030@mepcolinux exp9]$./a.outc++ ex1.cppat[C[C[C[C[C[C[C[C2.cpp1.cpp2.cpp
+#include<iostream>
+using namespace std;
+template<class T>
+class stack{
+   T s[10];
+   int top;
+   public: stack(){top=-1;}
+         void push(T item){
+            if(top==9){
+               cout<<"Stack full"<<endl;}
+            else{top++;
+               s[top]=item;}
+         }
+         void pop(){
+            if(top>=0){
+               cout<<"popped element :"<<s[top--]<<endl;}
+            else{
+                cout<<"Stack empty"<<endl;
+            }
+         }
+};
+int main(){
+   stack <int> obj1;
+   obj1.push(5);
+   obj1.push(10);
+   obj1.pop();
+   obj1.pop();
+   obj1.pop();
+   cout<<"--------------"<<endl;
+   stack <float> obj2;
+   obj2.push(5.2);
+   obj2.push(2.5);
+   obj2.pop();
+   obj2.pop();
+   obj2.pop();
+}
+[23bee030@mepcolinux exp9]$cat ex2.cpp[1Pex2.cpp[1Pex2.cpp[1Pex2.cpp[1Pex2.cppcex2.cpp+ex2.cpp+ex2.cpp ex2.cpp
+[23bee030@mepcolinux exp9]$./.[K[K[Kc++ ex2.cppat[C[C[C[C[C[C[C[C[4P./a.out
+popped element :10
+popped element :5
+Stack empty
+--------------
+popped element :2.5
+popped element :5.2
+Stack empty
+[23bee030@mepcolinux exp9]$exit
+
+Script done on Tue 09 Sep 2025 07:16:38 AM IST

@@ -1,0 +1,116 @@
+Script started on Tue 09 Apr 2024 12:55:19 AM IST
+[?1034h[23bee030@mepcolinux expr5]$car[Kt ar1.sh
+#!/bin/bash
+echo "Enter arg1"
+read one
+echo "Enter arg2"
+read two
+echo "First argument is -->$one"
+echo "Second argument is -->$two"
+sum=$(($one+$two))
+echo "sum=$sum"
+[23bee030@mepcolinux expr5]$cat ar1.sh[6Pexitcat ar1.shls[Kwqrm oddnum.shvi[C[C[C[C[C[C[C[C[C[Crm[C[C[C[C[C[C[C[C[C[Cwq[Klscat ar1.sh[6Pexitcat ar1.sh[Kcat ar1.sh[1P ar1.sh[1P ar1.shs ar1.shh ar1.sh[1P ar1.sh[1P ar1.sh[1P ar1.shs ar1.shh ar1.sh[C[1Par1.sh ar1.sh
+Enter arg1
+20
+Enter arg2
+34
+First argument is -->20
+Second argument is -->34
+sum=54
+[23bee030@mepcolinux expr5]$at [K[K[Kcat canca[K[K[K[Koncat.sh
+#!/bin/bash
+echo "Enter a string"
+read string1
+echo "Enter another string"
+read string2
+string=$string1$string2
+echo "$string is great source for linux beginners"
+
+[23bee030@mepcolinux expr5]$sh com[Kncat.sh
+Enter a string
+Lamborghini 
+Enter another string
+Huracan
+LamborghiniHuracan is great source for linux beginners
+[23bee030@mepcolinux expr5]$vi oddnum.sh[1P oddnum.sh[1P oddnum.shc oddnum.sha oddnum.sht oddnum.sh
+#!/bin/bash
+echo Enter five digits of a number
+read num
+n=1
+while [ $n -le 5 ]
+do 
+   a=`echo $num | cut -c $n`
+   echo $a
+   n=`expr $n + 2`
+done
+[23bee030@mepcolinux expr5]$sh oddnum.sh
+Enter five digits of a number
+23456
+2
+4
+6
+[23bee030@mepcolinux expr5]$sh oddnum.sh
+Enter five digits of a number
+12345
+1
+3
+5
+[23bee030@mepcolinux expr5]$sh oddnum.sh[1@cat[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[Klargesh concat.sh[1@cat[C[C[C[C[C[C[C[C[C[C[4Psh ar1.sh[1@cat[C[C[C[C[C[C[C[6Pexitcat ar1.sh[1Psh[C[C[C[C[C[C[Ccat concat.sh[1Psh[C[C[C[C[C[C[C[C[C[C[3Pcat largesh oddnum.sh[Ksh oddnum.sh[3Pcat largesh oddnum.sh[3Pcat largesh concat.sh[1@cat[C[C[C[C[C[C[C[C[C[C[4Psh ar1.sh[1@cat[C[C[C[C[C[C[C[6Pexitcat ar1.shls[Kwqrm oddnum.shvi[C[C[C[C[C[C[C[C[C[Csh[C[C[C[C[C[C[C[C[C[Cvi[C[C[C[C[C[C[C[C[C[Csh[C[C[C[C[C[C[C[C[C[Cvi[C[C[C[C[C[C[C[C[C[C ls[Kclear[3Plsrm arg.shvi ar1.sh[1@man[C[C[C[C[C[C[C[1Pvi arg.shls[Kclear[3Plsman operatorrelative operatorge[K-lq[1Plevi oddnum.shlarge_n_num.shsh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kclearsh comp2strg.sh[7Pman read[3Pclearman readsh comp2strg.sh[10Pclear[3Plsvi large_n_num.sh[C[1Plarge_n_num.sh[1Plarge_n_num.sh[1Plarge_n_num.shclarge_n_num.shalarge_n_num.shtlarge_n_num.sh large_n_num.sh
+#!/bin/bash
+echo "Enter size(N)"
+read N
+i=1
+max=0
+echo "Enter Numbers"
+while [ $i -le $N ]
+do 
+   read num
+ if [ $i -eq 1 ]    #set first number as max
+     then
+      max=$num
+ else             #from number 2 update max if the num>max
+   if [ $num -gt $max ]
+     then
+   max=$num
+   fi
+fi
+i=$((i+1))          #increment by 1
+done
+echo "The largest number is "
+echo $max
+
+
+[23bee030@mepcolinux expr5]$cat large_n_num.sh[1Plarge_n_num.sh[1Plarge_n_num.sh[1Plarge_n_num.sh[1Plarge_n_num.shslarge_n_num.shhlarge_n_num.sh large_n_num.sh
+Enter size(N)
+5
+Enter Numbers
+19  20
+67
+35
+90
+98
+The largest number is 
+98
+[23bee030@mepcolinux expr5]$cat comp2strg.sh
+#!/bin/bash
+read -p "enter two strings:"  str1 str2
+if [ $str1 == $str2 ] 
+then
+   echo "$str1 and $str2 are equal"
+else
+   echo "$str1 and $str2 are Unequal"
+fi
+
+[23bee030@mepcolinux expr5]$cat comp2strg.sh[C[C[1P comp2strg.sh[1P comp2strg.sh[1P comp2strg.shs comp2strg.shh comp2strg.sh
+enter two strings:Lamborghini Lomborghini
+Lamborghini and Lomborghini are Unequal
+[23bee030@mepcolinux expr5]$sh comp2strg.sh[1@cat[C[C[C[C[C[C[C[C[C[C[C[C[C[1Psh[C[C[C[C[C[C[C[C[C[C[C[C[C
+enter two strings:Aswin As  aswin
+Aswin and aswin are Unequal
+[23bee030@mepcolinux expr5]$sh comp2strg.sh[1@cat[C[C[C[C[C[C[C[C[C[C[C[C[Csh large_n_num.sh[1Pcat comp2strg.sh[1Psh[C[C[C[C[C[C[C[C[C[C[C[C[C
+enter two strings:Aswin Aswin
+Aswin and Aswin are equal
+[23bee030@mepcolinux expr5]$exit
+exit
+
+Script done on Tue 09 Apr 2024 01:01:46 AM IST

@@ -1,0 +1,151 @@
+Script started on Friday 26 April 2024 04:25:20 PM IST
+[?1034h[23bee030@mepcolinux expr6]$cat arithmetic.sh
+#!/bin/bash
+echo "Enter 2 numbers"
+read a b
+echo "Enter the choice"
+echo "1. Addition"
+echo "2.Subtraction"
+echo "3.Multiplication"
+echo "4.Division"
+read ch
+case $ch in
+   1)res=`echo $a + $b | bc`
+      ;;
+   2)res=`echo $a - $b | bc`
+      ;;
+   3)res=`echo $a \* $b | bc`
+      ;;
+   4)res=`echo $a / $b | bc`
+         
+      ;;
+esac
+echo "Result : $res"
+[23bee030@mepcolinux expr6]$sh[K[Kcat arithmetic.sh[1Parithmetic.sh[1Parithmetic.sh[1Prithmetic.sh[1Parithmetic.shsarithmetic.shharithmetic.sh arithmetic.sh
+Enter 2 numbers
+3 2   6 8
+Enter the choice
+1. Addition
+2.Subtraction
+3.Multiplication
+4.Division
+3
+Result : 48
+[23bee030@mepcolinux expr6]$cat language.sh
+#!/bin/bash
+echo -n "Enter the name of a country: "
+read country
+echo "The official language of $country is "
+case $country in
+india)
+   echo -n "Indian"
+;;
+romania)
+   echo -n "Romanian"
+;;
+italy)
+   echo -n "Italian"
+;;
+china)
+   echo -n "Chinese"
+;;
+*)
+   echo -n "Unknown"
+;;
+esac
+[23bee030@mepcolinux expr6]$cat language.sh[1Planguage.sh[1Planguage.sh[1Planguage.sh[1Planguage.shslanguage.shhlanguage.sh language.sh
+Enter the name of a country: I india
+The official language of india is 
+Indian[23bee030@mepcolinux expr6]$cat talk.sh
+#!/bin/bash
+echo "Plaease talk to me..."
+while :
+do
+   read INPUT_STRING
+   case $INPUT_STRING in
+      hello)
+	 echo "Hello yourself"
+	 ;;
+      bye)
+	 echo "See you again!"
+	 break
+	 ;;
+      *)echo "Sorry,I don't understand"
+	 ;;
+esac
+done
+echo
+echo "That's all folks !"
+
+[23bee030@mepcolinux expr6]$sh talk.sh
+Plaease talk to me...
+hello
+Hello yourself
+bye
+See you again!
+
+That's all folks !
+[23bee030@mepcolinux expr6]$cat upr_lwr_case.sh
+clear
+ echo "Menu"
+ echo "1. Lower to Upper "
+ echo "2. Upper to Lower "
+ echo "3. Quit"
+ echo "Enter choice : \c"
+ read choice
+ case $choice in
+    1) echo "Enter the File :\c"
+       read f1
+      	  echo "Converting lower to upper"
+	  echo " ${f1^^}"
+       
+       ;;
+
+     2) echo "Enter the File :\c"
+	read f1
+	   echo "Converting upper to lower"
+	   echo "${f1,,}"
+	;;
+
+      3|*)
+	 echo "Exit...."
+	 exit;;
+
+esac
+[23bee030@mepcolinux expr6]$sh[K[Kcat upr_lwr_case.sh[C[C[C[1P upr_lwr_case.sh[1P upr_lwr_case.sh[1P upr_lwr_case.shs upr_lwr_case.shj upr_lwr_case.sh[1P upr_lwr_case.shh upr_lwr_case.sh
+[3;J[H[2JMenu
+1. Lower to Upper 
+2. Upper to Lower 
+3. Quit
+Enter choice : \c
+1
+Enter the File :\c
+aswin is va ery good boy
+Converting lower to upper
+ ASWIN IS VERY GOOD BOY
+[23bee030@mepcolinux expr6]$sh upr_lwr_case.sh
+[3;J[H[2JMenu
+1. Lower to Upper 
+2. Upper to Lower 
+3. Quit
+Enter choice : \c
+2
+Enter the File :\c
+aswin is my best brien     friend
+Converting upper to lower
+aswin is my best friend
+[23bee030@mepcolinux expr6]$sh upr_lwr_case.sh[1@cat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Psh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[3;J[H[2JMenu
+1. Lower to Upper 
+2. Upper to Lower 
+3. Quit
+Enter choice : \c
+2' 
+Enter the File :\c
+ASWIN IS MY BEST FRIEND
+Converting upper to lower
+aswin is my best friend
+[23bee030@mepcolinux expr6]$EXIT[K[K[K[Kexit
+exit
+
+Script done on Friday 26 April 2024 04:29:34 PM IST

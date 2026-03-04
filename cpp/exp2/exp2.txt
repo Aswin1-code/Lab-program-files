@@ -1,0 +1,136 @@
+Script started on Fri 25 Jul 2025 04:44:54 PM IST
+[?1034h[23bee030@mepcolinux exp2]$car [K[Kt ex1.cpp
+#include<iostream>
+#include<string>
+using namespace std;
+class digiCount{
+   int num,anum,rem,count;
+   int *array;
+   public:
+    digiCount(int a){
+       num=a;
+       anum=a;
+       rem=0;
+       count=0;
+    }
+    void countNO(){
+  	while(num!=0){
+       rem=num%10;
+       num=num/10;
+       count++;
+	}
+  
+    array=new int [count];
+    for(int i=0;i<count;i++){
+       array[i]=anum%10;
+       anum=anum/10;
+    }
+    cout<<"Digits in the Array "<<endl;
+    for(int i=count-1;i>=0;i--){
+       cout<<array[i]<<endl;
+    }
+    //~digiCount(){
+      // delete [] array;
+   // }
+}
+};
+int main(){
+   int a;
+   cout<<"Enter a number: "<<endl;
+   cin>>a;
+   digiCount n1(a);
+   n1.countNO();
+}
+[23bee030@mepcolinux exp2]$c++ ex1.cpp
+[23bee030@mepcolinux exp2]$./a.out
+Enter a number: 
+123456
+Digits in the Array 
+1
+2
+3
+4
+5
+6
+[23bee030@mepcolinux exp2]$cat ex2.txt
+cat: ex2.txt: No such file or directory
+[23bee030@mepcolinux exp2]$x[Kcat ext[K2.cpp
+#include<iostream>
+#include<cstring>
+//#include<ccstring>
+using namespace std;
+class STRING{
+   char *st;
+ //  char *str;
+   public:
+   STRING();
+   STRING(const char*);
+   STRING(const char* ,const char*);
+   void findVowel();
+   void display();
+   ~STRING();
+};
+STRING::STRING(){
+   st=new char[1];
+   st[0]='\0';
+}
+STRING::STRING(const char* str1,const char* str2){
+   st=new char[strlen(str1)+strlen(str2)+1];
+   strcpy(st,str1);
+   strcat(st,str2);
+}
+STRING::STRING(const char* str1){
+   st=new char[strlen(str1)+1];
+   strcpy(st,str1);
+}
+void STRING::findVowel(){
+   char *arr,temp;
+   int count=0,i=0,j=0;
+   for(int i=0;st[i]!='\0';i++){
+      temp=tolower(st[i]);
+      if(temp=='a'||temp=='e'||temp=='i'||temp=='o'||temp=='u'){
+	 count++;
+      }
+   }
+   arr=new char[count+1];
+   for(int i=0;st[i]!='\0';i++){
+   temp=tolower(st[i]);
+   if(temp=='a'||temp=='e'||temp=='i'||temp=='o'||temp=='u'){
+	arr[j]=st[i];	
+        j++;	
+   }
+   }
+   arr[j]='\0';
+   cout<<"Vowels are: "<<"\t"<<arr<<endl;
+  // delete[] arr;
+}
+STRING::~STRING(){ 
+   delete[] st;
+}
+void STRING::display(){
+   cout<<st<<endl;
+}
+
+int main(){
+   STRING s1;
+   STRING s2("Hello");
+   STRING s3("Lamborghini","Porsche");
+   s1.display();
+   s2.display();
+   s3.display();
+   s2.findVowel();
+   s3.findVowel();
+}
+
+   
+
+[23bee030@mepcolinux exp2]$c++ ex2.cpp
+[23bee030@mepcolinux exp2]$./a,ou[K[K[K.out
+
+Hello
+LamborghiniPorsche
+Vowels are: 	eo
+Vowels are: 	aoiioe
+[23bee030@mepcolinux exp2]$exit
+
+Script done on Fri 25 Jul 2025 04:46:02 PM IST

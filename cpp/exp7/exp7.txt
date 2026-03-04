@@ -1,0 +1,100 @@
+Script started on Thu 11 Sep 2025 11:06:15 PM IST
+[?1034h[23bee030@mepcolinux exp7]$cat ex1.cpp
+#include <iostream>
+#include <math.h>
+using namespace std;
+class octal {
+   int oct;
+    public:
+    octal() { oct = 0; }
+    octal(int dec) {
+        oct = 0;
+        int i = 1;
+        while (dec != 0) {
+            oct += (dec % 8) * i;
+            dec /= 8;
+            i*= 10;
+        }
+    }
+    octal operator +(const octal &o) {
+        int dec1 = 0, dec2 = 0, i = 0;
+        int temp= oct;
+        while (temp != 0) {
+            dec1 += (temp % 10) * pow(8, i++);
+            temp /= 10;
+        }
+        temp = o.oct;
+        i = 0;
+        while (temp != 0) {
+            dec2 += (temp % 10) * pow(8, i++);
+            temp /= 10;
+        }
+        int sum = dec1 + dec2;
+        return octal(sum);
+    }
+    void display() {
+        cout << oct;
+    }
+};
+int main() {
+    int num1, num2;
+    cout << "Enter 2 decimal numbers: ";
+    cin >> num1 >> num2;
+    octal o1(num1);
+    cout << num1 << " Octal equivalent is ";
+    o1.display();
+    cout << endl;
+    octal o2(num2);
+    cout << num2 << " Octal equivalent is ";
+    o2.display();
+    cout << endl;
+    octal o3 = o2 + o1;
+    cout << "Sum in Octal = ";
+    o3.display();
+    cout << endl;
+    return 0;
+}
+ 
+[23bee030@mepcolinux exp7]$c++ c[Kex1.cpp
+[23bee030@mepcolinux exp7]$./a.out
+Enter 2 decimal numbers: 1972
+1564
+1972 Octal equivalent is 3664
+1564 Octal equivalent is 3034
+Sum in Octal = 6720
+[23bee030@mepcolinux exp7]$./a.outc++ ex1.cppat[C[C[C[C[C[C[C[C[1P.cpp2.cpp
+#include<iostream>
+#include<cmath>
+using namespace std;
+class rectangle{
+    float x,y;
+    public: rectangle(float Xc,float Yc):x(Xc),y(Yc){}
+    void display(){ cout<<"Rectangular form: "<<x<<" +j"<<y<<endl;}
+};
+class polar{
+    float mag,theta;
+    public: polar(float m,float t):mag(m),theta(t){}
+    operator rectangle(){
+        float radians,x,y;
+        radians=theta*(3.14/180);
+        x=mag*cos(radians); y=mag*sin(radians);
+        return rectangle (x,y);
+    }
+};
+int main(){
+    float a,b;
+    cout<<"Enter magnitude and angle: "<<endl;
+    cin>>a>>b;
+    polar p(a,b);
+    rectangle r(p);
+    r.display();
+}
+[23bee030@mepcolinux exp7]$cat ex2.cpp[4P./a.outc++ ex1.cpp[1P.cpp2.cpp
+[23bee030@mepcolinux exp7]$c++ ex2.cppat[C[C[C[C[C[C[C[C[4P./a.out
+Enter magnitude and angle: 
+5
+20
+Rectangular form: 4.69877 +j1.70927
+[23bee030@mepcolinux exp7]$exit
+
+Script done on Thu 11 Sep 2025 11:07:16 PM IST

@@ -1,0 +1,62 @@
+Script started on Friday 10 May 2024 03:49:10 PM IST
+[?1034h[23bee030@mepcolinux expr7]$grep -i "Unix" geekfile.txt
+unix is great os. unix is opensource. unix is free
+unix,linux which one you choose . linux is easy to learn
+unix is a multiuser os . unix is a powerful os
+[23bee030@mepcolinux expr7]$grep -i "Unix" geekfile.txt[C[1P[1P[1@u[1@n[1P[1@c
+3
+[23bee030@mepcolinux expr7]$grep -c "unix" geekfile.txt[C[K[K[K[K[K[K[K[K[K[K[K[K[K[1P "unix"l "unix"[C[C[C[C[C[C[C *
+geekfile.txt
+[23bee030@mepcolinux expr7]$grep -l "unix" *c "unix" geekfile.txt[1P[1@w
+unix is great os. unix is opensource. unix is free
+unix,linux which one you choose . linux is easy to learn
+unix is a multiuser os . unix is a powerful os
+[23bee030@mepcolinux expr7]$grep -w "unix" geekfile.txt[1P[1@o
+unix
+unix
+unix
+unix
+unix
+unix
+[23bee030@mepcolinux expr7]$grep -o "unix" geekfile.txt[1P[1@n
+1:unix is great os. unix is opensource. unix is free
+2:unix,linux which one you choose . linux is easy to learn
+3:unix is a multiuser os . unix is a powerful os
+[23bee030@mepcolinux expr7]$grep -n "unix" geekfile.txt[C[1P[1P[C[C[1@^
+unix is great os. unix is opensource. unix is free
+unix,linux which one you choose . linux is easy to learn
+unix is a multiuser os . unix is a powerful os
+[23bee030@mepcolinux expr7]$cat contacts.txt
+lamborghini
+audi
+ferrari
+mustang
+bmw
+ford
+koenigsegg
+porsche
+
+[23bee030@mepcolinux expr7]$cat contacts.txt\[K|[K | sort
+
+audi
+bmw
+ferrari
+ford
+koenigsegg
+lamborghini
+mustang
+porsche
+[23bee030@mepcolinux expr7]$cat contacts.txt | sort[C -r
+porsche
+mustang
+lamborghini
+koenigsegg
+ford
+ferrari
+bmw
+audi
+
+[23bee030@mepcolinux expr7]$exit
+exit
+
+Script done on Friday 10 May 2024 03:51:29 PM IST

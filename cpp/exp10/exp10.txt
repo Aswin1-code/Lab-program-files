@@ -1,0 +1,135 @@
+Script started on Wed Sep 17 15:46:40 2025
+[?1034h[23bee030@mepcolinux exp10]$car e   t ex1.t cpp
+#include<iostream>
+#include<stdexcept>
+using namespace std;
+class stack{
+   int *s;
+   int top;
+   int size,b;
+   public: 
+        stack(int sz){
+              size=sz;
+              s=new int[sz];
+              top=-1;
+              b=0;
+           }
+           void push(int x){
+              if(top==(size-1)){
+                 throw overflow_error("Stack overflow");}
+              s[++top]=x;
+              b=x;
+              cout<<"Pushed: "<<x<<endl;
+           }
+           int pop(){
+              if(b==0){ throw "emptystack";}
+              if(top==-1){
+                 throw underflow_error("Stack underflow");
+                }
+              return s[top--];
+            }
+};
+int main(){
+   stack sk(3);
+   try{ 
+        cout<<"Pop without push"<<endl;
+        cout<<sk.pop();
+    }
+   catch(const char *err){
+        cout<<"Error caught: "<<err<<endl;
+   }
+   try{
+         cout<<"Pushing elements ";
+         sk.push(10);
+         sk.push(12); 
+         sk.push(14); 
+         sk.push(16);}
+   catch(exception &err){
+      cout<<"Error caught: "<<err.what()<<endl;}
+
+   try{
+      cout<<"Popping elements\n"<<endl;
+      cout<<"popped: "<<sk.pop()<<endl;
+      cout<<"popped: "<<sk.pop()<<endl;
+      cout<<"popped: "<<sk.pop()<<endl;
+      cout<<"popped: "<<sk.pop()<<endl;
+      cout<<"popped: "<<sk.pop()<<endl;
+   }
+   catch(exception &err){
+      cout<<"Error caught: "<<err.what()<<endl;
+      try{
+         throw;}
+      catch(...){
+         cout<<"Rethrowing exception"<<endl;}
+   }
+}
+[23bee030@mepcolinux exp10]$cat ex1.cpp[1P[1P[1P[1P[1@c[1@+[1@+[1@ 
+[23bee030@mepcolinux exp10]$c++ ex1.cpp[K./a.out
+Pop without push
+Error caught: emptystack
+Pushing elements Pushed: 10
+Pushed: 12
+Pushed: 14
+Error caught: Stack overflow
+Popping elements
+
+popped: 14
+popped: 12
+popped: 10
+Error caught: Stack underflow
+Rethrowing exception
+[23bee030@mepcolinux exp10]$./a.outc++ ex1.cppat ex1.cpp[1P[1@2
+#include<iostream>
+#include<stdexcept>
+using namespace std;
+class avg{
+    int sum,count;
+    public: avg(){ sum=0; count=0;}
+    void addValue(int val){
+          if(val<0){
+	      throw invalid_argument("Negative value exception\n");}
+	  sum+=val;
+	  count++;
+	  }
+    float calc(){
+          if(count==0){
+	       throw runtime_error("Div by zero");}
+	  return (sum/count);}
+	  };
+int main(){
+   avg a;
+   //a.addValue(4);
+   try{
+      cout<<"Adding negative value "<<endl; a.addValue(-5);}
+   catch(exception &err){
+      cout<<"catch: "<<err.what();}
+   try{
+      cout<<"Calculating avg with no values "<<endl;
+      cout<<"Average "<<a.calc()<<endl;}
+   catch(runtime_error &err){
+      cout<<"Caught: "<<err.what()<<endl;}
+   catch(...){
+      cout<<"Default exception"<<endl;}
+   try{
+      cout<<"Rethrown\n";
+      try{
+	 throw logic_error("\nLogic err occurred");}
+      catch(logic_error &err){
+	 cout<<"Inner block"<<err.what()<<endl;
+	 throw;}
+   }
+   catch(...){
+      cout<<"Outer block"<<endl;}}
+[23bee030@mepcolinux exp10]$cat ex2.cpp[4P./a.outc++ ex1.cpp[1P[1@2
+[23bee030@mepcolinux exp10]$c++ ex2.cppat ex2.cpp[4P./a.outc++ ex1.cpp[4P./a.out
+Adding negative value 
+catch: Negative value exception
+Calculating avg with no values 
+Caught: Div by zero
+Rethrown
+Inner block
+Logic err occurred
+Outer block
+[23bee030@mepcolinux exp10]$exit
+
+Script done on Wed Sep 17 15:47:22 2025

@@ -1,0 +1,108 @@
+Script started on Friday 24 May 2024 03:51:30 PM IST
+[?1034h[23bee030@mepcolinux expr9]$cat grade.sh
+echo "Enter the 7 subjects mark of the student"
+read sub1 sub2 sub3 sub4 sub5 sub6 sub7 
+sum1=`expr $sub1 + $sub2 + $sub3 + $sub4 + $sub5 + $sub6 + $sub7`
+echo "Sum of the 7 subects are $sum1"
+per=`expr $sum1 / 7`
+echo "Percentage is $per"
+if [ $per -ge 91 ]
+then
+   echo "First class 'O GRADE ' with Distinction"
+elif [ $per -ge 81 -a $per -lt 90 ]
+then
+   echo "A+ grade"
+elif [ $per -ge 71 -a $per -lt 80 ]
+then
+   echo "A grade"
+elif [ $per -ge 61 -a $per -lt 70 ]
+then
+   echo "B+ grade"
+elif [ $per -ge 50 -a $per -lt 60 ]
+then
+   echo "B grade"
+elif [ $per -le 49 ]
+then
+   echo " Reapear "
+
+elif [ $per -gt 100 ]
+then
+   echo " Invalid data "
+else
+   echo " Thank you ! Good Bye "
+fi
+
+
+
+
+   
+
+
+
+[23bee030@mepcolinux expr9]$cat grade.sh[C[C[C[C[1P grade.sh[1P grade.sh[1P grade.shs grade.shh grade.sh[C grade.sh[Ksh  grade.sh[1Pgrade.sh
+Enter the 7 subjects mark of the student
+92 98 97 95 96 97 92
+Sum of the 7 subects are 667
+Percentage is 95
+First class 'O GRADE ' with Distinction
+[23bee030@mepcolinux expr9]$cat greet.sh
+hours=`date +%H`
+if [ $hours -le 12 ]
+then
+    echo "Good Morning"
+elif [ $hours -le 16 ]
+then
+    echo "Good Afternoon"
+elif [ $hours -le 20 ]
+then
+    echo "Good Evening"
+else
+    echo "Good night"
+fi
+
+[23bee030@mepcolinux expr9]$cat greet.sh[C[C[1Pgreet.sh[1Pgreet.sh[1Pgreet.sh[1Pgreet.shsgreet.shhgreet.sh greet.sh
+Good Afternoon
+[23bee030@mepcolinux expr9]$vi[K[Kcat loggedin_info.sh
+cat /etc/passwd>user.txt
+set `wc -l user.txt`
+log=`who | wc -l`
+echo “There are $l users in network”
+echo “There are $log user currently logged in”
+[23bee030@mepcolinux expr9]$cat loggedin_info.sh[1Ploggedin_info.sh[1Ploggedin_info.sh[1Ploggedin_info.sh[1Ploggedin_info.shsloggedin_info.shhloggedin_info.sh loggedin_info.sh
+“There are users in network”
+“There are 161 user currently logged in”
+[23bee030@mepcolinux expr9]$cat modify_time.sh
+echo –n “Enter File name:”
+read fname
+if [ -f $fname ]
+then
+   echo 'Last Modification date is '`ls -lt $fname | tr -s " " "," | cut -d "," -f7`
+else
+   echo "File does not exist"
+fi
+[23bee030@mepcolinux expr9]$cat modify_time.sh[C[C[C[1Pmodify_time.sh[1Pmodify_time.sh[1Pmodify_time.shsmodify_time.shhmodify_time.sh[1Pmodify_time.sh[1Pmodify_time.sh[1Pmodify_time.shsmodify_time.shhmodify_time.sh modify_time.sh
+–n “Enter File name:”
+demo.txt
+Last Modification date is 24
+[23bee030@mepcolinux expr9]$cat string_found [K_infile.sh
+echo “Enter File Name:”
+read f
+echo “Enter String:”
+read a
+b=`grep $a $f`;
+if [ $? -eq 0 ]
+then
+  echo “String Found”
+else
+  echo “Not Found”
+fi
+[23bee030@mepcolinux expr9]$cat string_found_infile.sh[1Pstring_found_infile.sh[1Pstring_found_infile.sh[1Pstring_found_infile.sh[1Pstring_found_infile.sh[Cstring_found_infile.shhstring_found_infile.sh string_found_infile.sh
+“Enter File Name:”
+demo.txt
+“Enter String:”
+this
+“String Found”
+[23bee030@mepcolinux expr9]$exit
+exit
+
+Script done on Friday 24 May 2024 03:54:29 PM IST

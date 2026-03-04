@@ -1,0 +1,6 @@
+Hello I am Aswin 
+This is the first class of linux lab
+apple
+orange
+cat 
+dog

@@ -1,0 +1,5 @@
+100	Arun
+98	Bala
+75	Cat
+55	Duriyan
+67	Nimalan
