@@ -1,2 +1,1 @@
 echo $(who -m)
-
